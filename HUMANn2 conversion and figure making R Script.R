@@ -12,7 +12,8 @@ library(limma);packageVersion("limma")#3.48.3
 
 
 
-###Load in the metadata and -omics data (KOs, ECs and Pathway data)###
+###Load in the metadata and -omics data HUMANn2 allows you to convert Uniprot IDs to numerous identifiers (ex. KOs, ECs, pathway data)###
+###NOTE:make sure that all samples are in CSV format first and make sure all sample IDs match in the meta data and the count datatable###
 
 metadata_omics <-read.csv(file="$metadata_file.csv", header=TRUE, sep = ",") #Load metadata metadata
 otu_mat<- read.csv(file="$count_data.csv", header=TRUE, sep=',') #this is contains the number of KOs/ECs/Pathways
@@ -23,12 +24,12 @@ tax_mat<- read.csv(file="$descritpion_data.csv") #this holds the pathway/EC desc
 ###Make Venndiagrams for each samples###
 
 venndf <- data.frame(otu_mat[0], 
-                     +otu_mat$SampleX_Metagenome, 
-                     +otu_mat$SampleX_Metatranscriptome,
-                     +otu_mat$SampleX_SimulatedMetagenome)
+                     +otu_mat$SampleName_Metagenome, 
+                     +otu_mat$SampleName_Metatranscriptome,
+                     +otu_mat$SampleName_SimulatedMetagenome)
 head(venndf)
 venn <- vennDiagram(venndf, include="both",
-            names = c("MetaGene", "MetaTrans","16S-meta"),
+            names = c("MetaGenenome", "MetaTranscriptome","16S-metagenome"),
             cex= 1, counts.col="Black")
 venn 
 
