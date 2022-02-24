@@ -1,6 +1,7 @@
 # multi-omics-CAGO-microbiome-code-
-This contains the R code that converts HUMANn2 output into R along and the R code for making figures and statistics. This also contains the datamining python code used for HUMANn2 taxonomic data from UNIPROT ID lists and MetaCyc pathways.
+Contained in this reposititory is R code that converts HUMANn2 .TSV files of genefamilies and pathway abundances from HUMANn2 output into R and code for making figures and conducting statistics. 
+
+This also contains datamining python script used for pulling taxonomic data from HUMANn2 output UNIPROT ID lists and MetaCyc pathways tables.
 
 
-This is associated with the paper "......."
-
+See "..Title of paper with link.." 
